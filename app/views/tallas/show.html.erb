@@ -1,0 +1,21 @@
+<%- model_class = Talla -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:medida_id) %>:</strong></dt>
+  <dd><%= @talla.medida_id %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.Atras', :default => t("helpers.links.Atras")),
+              tallas_path, :class => 'btn'  %>
+  <%= link_to t('.Editar', :default => t("helpers.links.Editar")),
+              edit_talla_path(@talla), :class => 'btn' %>
+  <%= link_to t('.Eliminar', :default => t("helpers.links.Eliminar")),
+              talla_path(@talla),
+              :method => 'delete',
+              :data => { :confirm => t('.Esta seguro', :default => t("helpers.links.Esta seguro", :default => 'Esta seguro?')) },
+              :class => 'btn btn-danger' %>
+</div>

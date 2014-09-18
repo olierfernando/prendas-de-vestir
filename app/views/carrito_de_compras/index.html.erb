@@ -1,0 +1,38 @@
+<%- model_class = CarritoDeCompra -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nombre_prodcuto) %></th>
+      <th><%= model_class.human_attribute_name(:codigo) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @carrito_de_compras.each do |carrito_de_compra| %>
+      <tr>
+        <td><%= link_to carrito_de_compra.id, carrito_de_compra_path(carrito_de_compra) %></td>
+        <td><%= carrito_de_compra.nombre_prodcuto %></td>
+        <td><%= carrito_de_compra.codigo %></td>
+        <td><%=l carrito_de_compra.created_at %></td>
+        <td>
+          <%= link_to t('.Editar', :default => t("helpers.links.Editar")),
+                      edit_carrito_de_compra_path(carrito_de_compra), :class => 'btn btn-mini' %>
+          <%= link_to t('.Eliminar', :default => t("helpers.links.Eliminar")),
+                      carrito_de_compra_path(carrito_de_compra),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Esta seguro?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.Nuevo', :default => t("helpers.links.Nuevo")),
+            new_carrito_de_compra_path,
+            :class => 'btn btn-primary' %>

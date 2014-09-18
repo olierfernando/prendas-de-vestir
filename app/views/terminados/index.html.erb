@@ -1,0 +1,38 @@
+<%- model_class = Terminado -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:bordados) %></th>
+      <th><%= model_class.human_attribute_name(:estampado) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @terminados.each do |terminado| %>
+      <tr>
+        <td><%= link_to terminado.id, terminado_path(terminado) %></td>
+        <td><%= terminado.bordados %></td>
+        <td><%= terminado.estampado %></td>
+        <td><%=l terminado.created_at %></td>
+        <td>
+          <%= link_to t('.Editar', :default => t("helpers.links.Editar")),
+                      edit_terminado_path(terminado), :class => 'btn btn-mini' %>
+          <%= link_to t('.Eliminar', :default => t("helpers.links.Eliminar")),
+                      terminado_path(terminado),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'esta seguro?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.Nuevo', :default => t("helpers.links.Nuevo")),
+            new_terminado_path,
+            :class => 'btn btn-primary' %>

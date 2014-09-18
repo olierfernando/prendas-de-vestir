@@ -1,0 +1,55 @@
+primeros pasos
+rails g scaffold ficha nombre_fcha:references codigo:string --skip-stylesheets
+
+bundle install
+rake db:migrate
+rails g simple_form:install
+rails g bootstrap:install
+rails g bootstrap:themed fichas -f
+rails s
+
+
+rails g scaffold terminado bordados:string estanpado:string --skip-stylesheets
+
+rake db:migrate
+rails g bootstrap:themed terminados -f
+rails s
+
+rails g scaffold talla medida:references --skip-stylesheets
+
+rake db:migrate
+rails g bootstrap:themed talla -f
+rails s
+
+rails g scaffold color nombre_color:references --skip-stylesheets
+
+rake db:migrate
+rails g bootstrap:themed color -f
+rails s
+
+rails g scaffold producto ficha:references referencia:string precio:string cantidad:string talla:references  color:references terminado:references --skip-stylesheets
+
+rake db:migrate
+rails g bootstrap:themed productos -f
+rails s
+
+rails g scaffold catalogo camisa:string vestido:string ropa_interior:string faldas:string blusas:string jeans:string zapatos:string tacones:string --skip-stylesheets
+
+rake db:migrate
+rails g bootstrap:themed catalogos -f
+rails s
+
+
+rails g scaffold carrito de compras nombre:string codigo:string --skip-stylesheets
+
+rake db:migrate
+rails g bootstrap:themed carrito de compras -f
+rails s
+
+rails g scaffold datos_del_cliente nombre:string cedula:string apellido:string telefono:string 
+direccion:string email:string ciudad:string forma_de_pago --skip-stylesheets
+
+rake db:migrate
+rails g bootstrap:themed datos_del_clientes -f
+rails s
+

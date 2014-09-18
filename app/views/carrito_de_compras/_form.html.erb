@@ -1,0 +1,9 @@
+<%= simple_form_for @carrito_de_compra, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :nombre_prodcuto %>
+  <%= f.input :codigo %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                carrito_de_compras_path, :class => 'btn' %>
+  </div>
+<% end %>

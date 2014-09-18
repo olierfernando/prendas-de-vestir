@@ -1,0 +1,36 @@
+<%- model_class = Talla -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:medida_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tallas.each do |talla| %>
+      <tr>
+        <td><%= link_to talla.id, talla_path(talla) %></td>
+        <td><%= talla.medida_id %></td>
+        <td><%=l talla.created_at %></td>
+        <td>
+          <%= link_to t('.Editar', :default => t("helpers.links.Editar")),
+                      edit_talla_path(talla), :class => 'btn btn-mini' %>
+          <%= link_to t('.Eliminar', :default => t("helpers.links.Eliminar")),
+                      talla_path(talla),
+                      :method => :delete,
+                      :data => { :confirm => t('.Esta seguro', :default => t("helpers.links.Esta seguro", :default => 'Esta seguro?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.Nuevo', :default => t("helpers.links.Nuevo")),
+            new_talla_path,
+            :class => 'btn btn-primary' %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ficha_id: 
+  referencia: MyString
+  precio: MyString
+  cantidad: MyString
+  talla_id: 
+  color_id: 
+  terminado_id: 
+
+two:
+  ficha_id: 
+  referencia: MyString
+  precio: MyString
+  cantidad: MyString
+  talla_id: 
+  color_id: 
+  terminado_id: 
