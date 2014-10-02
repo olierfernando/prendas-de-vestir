@@ -34,10 +34,10 @@
         <td>
           <%= link_to t('.Editar', :default => t("helpers.links.Editar")),
                       edit_datos_del_cliente_path(datos_del_cliente), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t('.Eliminar', :default => t("helpers.links.Eliminar")),
                       datos_del_cliente_path(datos_del_cliente),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Esta seguro?')) },
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
@@ -45,6 +45,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.Nuevo', :default => t("helpers.links.Nuevo")),
             new_datos_del_cliente_path,
             :class => 'btn btn-primary' %>
