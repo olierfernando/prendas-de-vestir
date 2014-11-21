@@ -24,6 +24,7 @@ class FichasController < ApplicationController
   # POST /fichas
   # POST /fichas.json
   def create
+    
     @ficha = Ficha.new(ficha_params)
 
     respond_to do |format|

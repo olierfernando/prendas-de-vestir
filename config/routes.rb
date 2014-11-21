@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :catalogo_homs
+
+  resources :calz_hombres
+
+  resources :cal_mujers
+
   resources :datos_del_clientes
 
   resources :carrito_de_compras

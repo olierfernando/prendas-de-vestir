@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jeans: MyString
+  camisa: MyString
+  chaquetas: MyString
+  tenis: MyString
+  camisilla: MyString
+  pantaloneta: MyString
+
+two:
+  jeans: MyString
+  camisa: MyString
+  chaquetas: MyString
+  tenis: MyString
+  camisilla: MyString
+  pantaloneta: MyString

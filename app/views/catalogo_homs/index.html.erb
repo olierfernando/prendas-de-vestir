@@ -1,0 +1,46 @@
+<%- model_class = CatalogoHom -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:jeans) %></th>
+      <th><%= model_class.human_attribute_name(:camisa) %></th>
+      <th><%= model_class.human_attribute_name(:chaquetas) %></th>
+      <th><%= model_class.human_attribute_name(:tenis) %></th>
+      <th><%= model_class.human_attribute_name(:camisilla) %></th>
+      <th><%= model_class.human_attribute_name(:pantaloneta) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @catalogo_homs.each do |catalogo_hom| %>
+      <tr>
+        <td><%= link_to catalogo_hom.id, catalogo_hom_path(catalogo_hom) %></td>
+        <td><%= catalogo_hom.jeans %></td>
+        <td><%= catalogo_hom.camisa %></td>
+        <td><%= catalogo_hom.chaquetas %></td>
+        <td><%= catalogo_hom.tenis %></td>
+        <td><%= catalogo_hom.camisilla %></td>
+        <td><%= catalogo_hom.pantaloneta %></td>
+        <td><%=l catalogo_hom.created_at %></td>
+        <td>
+          <%= link_to t('.Editar', :default => t("helpers.links.Editar")),
+                      edit_catalogo_hom_path(catalogo_hom), :class => 'btn btn-mini' %>
+          <%= link_to t('.Eliminar', :default => t("helpers.links.Eliminar")),
+                      catalogo_hom_path(catalogo_hom),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Esta seguro')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.Nuevo', :default => t("helpers.links.Nuevo")),
+            new_catalogo_hom_path,
+            :class => 'btn btn-primary' %>

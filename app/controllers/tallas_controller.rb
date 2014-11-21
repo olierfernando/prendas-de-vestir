@@ -36,7 +36,7 @@ class TallasController < ApplicationController
       end
     end
   end
-
+ end
   # PATCH/PUT /tallas/1
   # PATCH/PUT /tallas/1.json
   def update
