@@ -11,43 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112155509) do
-
-  create_table "cal_mujers", force: true do |t|
-    t.string   "tacones"
-    t.string   "tenis"
-    t.string   "tenis_deport"
-    t.string   "chamcletas"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "calz_hombres", force: true do |t|
-    t.string   "zapatos"
-    t.string   "tenis"
-    t.string   "tenis_deport"
-    t.string   "chamclas"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "calzado_hombs", force: true do |t|
-    t.string   "zapatos_clasico"
-    t.string   "tenis"
-    t.string   "tenis_deport"
-    t.string   "chanclas"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "calzado_mujs", force: true do |t|
-    t.string   "tacones"
-    t.string   "tenis"
-    t.string   "tenis_deport"
-    t.string   "chamcletas"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20141124153420) do
 
   create_table "carrito_de_compras", force: true do |t|
     t.string   "nombre_prodcuto"
@@ -152,8 +116,8 @@ ActiveRecord::Schema.define(version: 20141112155509) do
   create_table "usuarios", force: true do |t|
     t.string   "nombre"
     t.string   "apellido"
-    t.string   "dire"
-    t.string   "tele"
+    t.string   "direccion"
+    t.string   "telefono"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
